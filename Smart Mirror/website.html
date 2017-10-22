@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>JS Bin</title>
+
+        <style type="text/css">
+        h3 {color:slategrey;font-family:"Century Gothic"}
+        </style>
+    <style type="text/css">
+        p {color:blue;padding-top: 2000px}
+    </style>
+    <link rel="stylesheet" href="Style.css">
+
+</head>
+<body>
+<script src="https://code.jquery.com/jquery-3.1.0.js"></script>
+<A NAME="codeword"></A>
+<!--<hr>
+<h1>Welcome to your Smart Mirror</h1>
+<hr>-->
+a
+
+<h1 id="date"; style="font-size: 250%; color:lightgray;" ></h1> <!-- This line is the current date-->
+<!--<div class="weatherResponse"></div> <!-- This line is the current weather-->
+<div class="weatherResponse"></div>
+
+<a href="#weather"><img src="weatherICON.png" height="100"/></a>
+
+<p><a name="weather"></a>Welcome to Weather</p>
+<div class="weatherName"; style="text-align: center"></div>
+
+    <A HREF="#codeword">Back to the top</A>
+
+
+
+<script>
+    var apiCall = 'https://api.openweathermap.org/data/2.5/weather?q=Ames&appid=06d531482537d578e12364483114f6a6';
+    $.getJSON(apiCall, weatherCallback);
+
+
+    var monthNames = ["January", "February", "March", "April", "May", "June",
+        "July", "August", "September", "October", "November", "December"
+    ];
+    var weekNames = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday",
+        "Sunday"
+    ];
+
+    var d = new Date();
+    document.getElementById("date").innerHTML = weekNames[d.getDay()] + ", " + monthNames[d.getMonth()] + " " + d.getDate();
+
+
+    function weatherCallback(weatherData){
+        var cityName = weatherData.name;
+        var country = weatherData.sys.country;
+        var description =  weatherData.weather[0].description;
+        var temp = weatherData.main.temp;
+        temp = ((9/5)*(temp-273)+32).toFixed();
+
+        $('.weatherName').append(cityName);
+        $('.weatherCountry').append(country);
+        $('.weatherDescription').append(description);
+        $('.weatherTemp').append(temp);
+           //$('.weatherResponse').append("The weather in " + cityName + ", " +
+            //country + " is currently " + description + " " + temp + "°");
+
+
+    }
+    var today = new Date();
+    document.getElementById('time').innerHTML=today;
+
+</script>
+
+
+</body>
+</html>

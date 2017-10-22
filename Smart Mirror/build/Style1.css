@@ -1,0 +1,57 @@
+body{
+    background-color: rgb(22,22,22);
+    color:ghostwhite;
+    font-family: "Courier New";
+}
+
+#txt{
+    position:absolute;
+    bottom: 0px;
+    right: 0;
+    font-size: 50px
+}
+
+/*#date{*/
+    /*font-size: 50px;*/
+    /*position:absolute;*/
+    /*left: 200px;*/
+    /*top: 20px}*/
+#date{
+    font-size: 50px;
+    /*position:absolute;*/
+    top: 20px}
+
+
+#gif{
+    background-color: black;
+    font-size:0;
+}
+
+#name{
+    position:absolute;
+    top: 0px;
+    font-size: 50px;
+    margin: auto;
+    right: 20px}
+
+#des{
+    position:absolute;
+    text-transform: capitalize;
+    top: 50px;
+    /*left: 20px;*/
+    right: 25px
+}
+
+#pic{
+    position:absolute;
+    text-transform: capitalize;
+    top: 40px;
+    right: 150px
+}
+#tmp{
+    position:absolute;
+    text-transform: capitalize;
+    top: 80px;
+    right: 20px;
+    font-size: 50px
+}
